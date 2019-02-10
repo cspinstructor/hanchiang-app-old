@@ -22,18 +22,29 @@
     </style>
   </head>
   <body>
-    <div data-role="page" id="page1">
+    <div data-role="page" id="page2" data-id="same">
       <div data-role="header">
         <h1>Hanchiang App</h1>
       </div>
       <div data-role="main" class="ui-content">
         <h1>Page B welcome</h1>
       </div>
-      <div data-role="footer" id="footer">
+      <div data-role="footer" id="footer" data-position="fixed" data-id="foo1">
         <div data-role="navbar">
           <ul>
-            <li><a href="index.html" class="ui-btn-active">Timetable</a></li>
-            <li><a href="calendar.html">Calendar</a></li>
+            <li>
+              <a href="index.html" data-icon="home">Timetable</a>
+            </li>
+            <li>
+              <a
+                href="calendar.html"
+                data-icon="grid"
+                class="ui-btn-active ui-state-persist"
+                >Calendar</a
+              >
+            </li>
+            <li><a href="result.html" data-icon="info">Result</a></li>
+            <li><a href="news.html" data-icon="bars">News</a></li>
           </ul>
         </div>
       </div>

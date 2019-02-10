@@ -7,18 +7,15 @@
       content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width"
     />
     <title>Blank App</title>
-    <link
-      rel="stylesheet"
-      href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"
-    />
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    <style>
-      #footer {
+    <link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css" />
+    <script src="jquery/jquery-1.11.1.min.js"></script>
+    <script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+    <style type="text/css">
+      /* #footer {
         position: absolute;
         bottom: 0;
         width: 100%;
-      }
+      } */
     </style>
   </head>
   <body>
@@ -29,11 +26,20 @@
       <div data-role="main" class="ui-content">
         <h1>Page A welcome</h1>
       </div>
-      <div data-role="footer" id="footer">
+      <div data-role="footer" id="footer" data-position="fixed" data-id="foo1">
         <div data-role="navbar">
           <ul>
-            <li><a href="index.html" class="ui-btn-active">Timetable</a></li>
-            <li><a href="calendar.html">Calendar</a></li>
+            <li>
+              <a
+                href="index.html"
+                data-icon="home"
+                class="ui-btn-active ui-state-persist"
+                >Timetable</a
+              >
+            </li>
+            <li><a href="calendar.html" data-icon="grid">Calendar</a></li>
+            <li><a href="result.html" data-icon="info">Result</a></li>
+            <li><a href="news.html" data-icon="bars">News</a></li>
           </ul>
         </div>
       </div>
