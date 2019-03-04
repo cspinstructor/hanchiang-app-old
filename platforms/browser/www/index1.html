@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width"
+    />
+    <title>Blank App</title>
+    <link
+      rel="stylesheet"
+      href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"
+    />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script id="panel-init">
+      $(function() {
+        $("body>[data-role='panel']").panel();
+      });
+    </script>
+    <style type="text/css">
+      .ui-icon-result:after {
+        background-image: url('images/test-results.svg');
+        background-size: 18px 18x;
+      }
+      .ui-icon-mynews:after {
+        background-image: url('images/newspaper.svg');
+        background-size: 18px 18x;
+      }
+      .ui-icon-mycalendar:after {
+        background-image: url('images/calendar-daily.svg');
+        background-size: 18px 18x;
+      }
+    </style>
+  </head>
+  <body>
+    <div data-role="page" id="timetable">
+      <div data-role="header">
+        <h1>Time Table</h1>
+        <a
+          href="#mypanel"
+          class="ui-btn ui-alt-icon ui-btn-icon-notext ui-icon-bars ui-nodisc-icon"
+          id="openpanel"
+        ></a>
+      </div>
+
+      <div data-role="ui-content">Timetable content...</div>
+    </div>
+    <!-- /timetable -->
+
+    <div data-role="page" id="calendar">
+      <div data-role="header">
+        <h1>Calendar</h1>
+        <a
+          href="#mypanel"
+          class="ui-btn ui-btn-b ui-btn-icon-notext ui-icon-bars ui-nodisc-icon"
+          id="openpanel"
+        ></a>
+      </div>
+
+      <div data-role="ui-content">Calendar content...</div>
+    </div>
+    <!-- /calendar-->
+
+    <div data-role="page" id="result">
+      <div data-role="header">
+        <h1>Result</h1>
+        <a
+          href="#mypanel"
+          class="ui-btn ui-alt-icon ui-btn-icon-notext ui-icon-bars ui-nodisc-icon"
+          id="openpanel"
+        ></a>
+      </div>
+
+      <div data-role="ui-content">Result content...</div>
+    </div>
+    <!-- /result-->
+
+    <div data-role="page" id="news">
+      <div data-role="header">
+        <h1>News</h1>
+        <a
+          href="#mypanel"
+          class="ui-btn ui-alt-icon ui-btn-icon-notext ui-icon-bars ui-nodisc-icon"
+          id="openpanel"
+        ></a>
+      </div>
+
+      <div data-role="ui-content">News content...</div>
+    </div>
+    <!-- /result-->
+
+    <div data-role="panel" data-display="overlay" id="mypanel" data-theme="a">
+      <!-- panel content goes here -->
+      <a
+        class="ui-btn ui-alt-icon ui-icon-grid ui-nodisc-icon ui-btn-icon-left"
+        href="#timetable"
+        data-rel="close"
+        >Timetable</a
+      >
+
+      <a
+        class="ui-btn ui-alt-icon ui-icon-mycalendar ui-nodisc-icon ui-btn-icon-left"
+        href="#calendar"
+        data-rel="close"
+        >Calendar</a
+      >
+      <a
+        class="ui-btn ui-alt-icon ui-icon-result ui-nodisc-icon ui-btn-icon-left"
+        href="#result"
+        data-rel="close"
+        >Result</a
+      >
+      <a
+        class="ui-btn ui-alt-icon ui-icon-mynews ui-nodisc-icon ui-btn-icon-left"
+        href="#news"
+        data-rel="close"
+        >News</a
+      >
+      <a
+        href="#openpanel"
+        class="ui-btn ui-alt-icon ui-btn-icon-notext ui-nodisc-icon ui-icon-carat-l"
+        data-rel="close"
+      ></a>
+    </div>
+    <!-- /panel -->
+
+    <!-- <script type="text/javascript" src="cordova.js"></script> -->
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>

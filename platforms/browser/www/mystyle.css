@@ -1,0 +1,21 @@
+.top-nav {
+  clear: both;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+.contents {
+  margin-top: 50px;
+}
+.ui-icon-result:after {
+  background-image: url('images/test-results.svg');
+  background-size: 18px 18x;
+}
+.ui-icon-mynews:after {
+  background-image: url('images/newspaper.svg');
+  background-size: 18px 18x;
+}
+.ui-icon-mycalendar:after {
+  background-image: url('images/calendar-daily.svg');
+  background-size: 18px 18x;
+}

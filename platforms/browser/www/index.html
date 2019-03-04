@@ -7,43 +7,36 @@
       content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width"
     />
     <title>Blank App</title>
-    <link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css" />
-    <script src="jquery/jquery-1.11.1.min.js"></script>
-    <script src="jquery/jquery.mobile-1.4.5.min.js"></script>
-    <style type="text/css">
-      /* #footer {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-      } */
-    </style>
+    <link
+      rel="stylesheet"
+      href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"
+    />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <link rel="stylesheet" href="mystyle.css" />
   </head>
   <body>
-    <div data-role="page" id="page1">
+    <div class="top-nav">
       <div data-role="header">
-        <h1>Hanchiang App</h1>
-      </div>
-      <div data-role="main" class="ui-content">
-        <h1>Page A welcome</h1>
-      </div>
-      <div data-role="footer" id="footer" data-position="fixed" data-id="foo1">
-        <div data-role="navbar">
-          <ul>
-            <li>
-              <a
-                href="index.html"
-                data-icon="home"
-                class="ui-btn-active ui-state-persist"
-                >Timetable</a
-              >
-            </li>
-            <li><a href="calendar.html" data-icon="grid">Calendar</a></li>
-            <li><a href="result.html" data-icon="info">Result</a></li>
-            <li><a href="news.html" data-icon="bars">News</a></li>
-          </ul>
-        </div>
+        <h2>navbar2</h2>
+        <a
+          href="#mypanel"
+          class="ui-btn ui-alt-icon ui-btn-icon-notext ui-icon-bars ui-nodisc-icon"
+          id="openpanel"
+        ></a>
       </div>
     </div>
-    <script type="text/javascript" src="cordova.js"></script>
+    <!--/top-nav-->
+
+    <div class="contents"></div>
+
+    <div data-role="panel" data-display="overlay" id="mypanel" data-theme="a">
+      <!-- panel content loaded by app.js -->
+    </div>
+    <!-- /panel -->
+
+    <!-- <script type="text/javascript" src="cordova.js"></script> -->
+    <script type="text/javascript" src="app.js"></script>
   </body>
 </html>
