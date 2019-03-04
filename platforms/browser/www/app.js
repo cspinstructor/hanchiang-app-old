@@ -36,12 +36,15 @@ function loadNewsPageDiv() {
 
 //--- Hanchiang News ---
 function getNews() {
-  var url = 'http://192.168.137.84/hanchiang/hanchiangscraper.php';
+  //var url = 'http://192.168.137.84/hanchiang/hanchiangscraper.php';
+  var url = 'http://hju.epizy.com/php/getnews.php';
 
   $.ajax(url)
     .done(function(data) {
       console.log(data);
-      $('.contents').html(data);
+      //var obj = JSON.parse(data);
+      //console.log(obj);
+      //$('.contents').html(data);
     })
     .fail(function() {
       $('.contents').html(name + ' not found!');
