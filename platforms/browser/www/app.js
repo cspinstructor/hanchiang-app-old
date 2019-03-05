@@ -1,52 +1,85 @@
 // $('#news-content').load('http://www.hanchiangnews.com/en/');
 
 //--- load side panel into index.html ---
-$.ajax('sidepanel.html')
+$.ajax("sidepanel.html")
   .done(function(sidepanel) {
-    $('#mypanel').html(sidepanel);
+    $("#mypanel").html(sidepanel);
   })
   .fail(function() {
-    console.log('ajax sidepanel error');
+    console.log("ajax sidepanel error");
   });
 
-$(document).on('click', '#news', function() {
-  console.log('news clicked');
-  $('[data-role=panel]').panel('close');
+$(document).on("click", "#news", function() {
+  console.log("news clicked");
+  //alert('news panel clicked');
   loadNewsPageDiv();
-  //getNews();
+  $("[data-role=panel]").panel("close");
 });
 
-$(document).on('click', '#closepanel', function() {
-  console.log('closepanel clicked');
-  $('[data-role=panel]').panel('close');
+$(document).on("click", "#closepanel", function() {
+  console.log("closepanel clicked");
+  alert("close panel clicked");
+  $("[data-role=panel]").panel("close");
 });
 
 //--- replace contents div with news div ---
 function loadNewsPageDiv() {
-  $.ajax('news.html')
+  $.ajax("news.html")
     .done(function(newsdiv) {
-      console.log('ajax news done');
-      $('.contents').replaceWith(newsdiv);
+      $(".contents").replaceWith(newsdiv);
       getNews();
     })
     .fail(function() {
-      console.log('ajax unable to replace with news div');
+      console.log("ajax unable to replace with news div");
     });
 }
 
 //--- Hanchiang News ---
 function getNews() {
-  //var url = 'http://192.168.137.84/hanchiang/hanchiangscraper.php';
-  var url = 'http://hju.epizy.com/php/getnews.php';
+  var url = "http://hju.freetzi.com/php/getnews.php";
 
-  $.ajax(url)
-    .done(function(data) {
-      console.log(data);
-      //var obj = JSON.parse(data);
-      //console.log(obj);
-      //$('.contents').html(data);
-    })
-    .fail(function() {
-      $('.contents').html(name + ' not found!');
+  var output = "";
+
+  $.getJSON(url, function(result) {
+    console.log(result);
+    $.each(result, function(i, field) {
+      output += "<li class='wrap'>";
+      output += "<strong>" + field.title + "</strong><br>";
+      output += field.date + "<br>";
+      output += "<img src='";
+      output += field.pic + "'/><br>";
+      output += field.content + "<br>";
+      output += "</li>";
     });
+    $("#newslist").append(output);
+    $("#newslist")
+      .listview()
+      .listview("refresh");
+  });
+
+  // $.ajax({
+  //   type: 'GET',
+  //   url: url,
+  //   crossDomain: true,
+  //   cache: false,
+  //   success: function(result) {
+  //     // var obj = $.parseJSON(result[0]);
+  //     console.log(result);
+  //     $.each(result, function(i, field) {
+  //       console.log(i + ':' + field.title);
+  //     });
+  //   }
+  // });
+
+  // $.ajax(url)
+  //   .done(function(data) {
+  //     console.log(data);
+  //     alert(data);
+  //     //var obj = JSON.parse(data);
+  //     //console.log(obj);
+  //     //$('.contents').html(data);
+  //   })
+  //   .fail(function() {
+  //     $('.contents').html(name + ' not found!');
+  //   });
 }
