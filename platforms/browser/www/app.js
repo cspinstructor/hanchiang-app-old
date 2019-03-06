@@ -10,15 +10,12 @@ $.ajax("sidepanel.html")
   });
 
 $(document).on("click", "#news", function() {
-  console.log("news clicked");
   //alert('news panel clicked');
   loadNewsPageDiv();
   $("[data-role=panel]").panel("close");
 });
 
 $(document).on("click", "#closepanel", function() {
-  console.log("closepanel clicked");
-  alert("close panel clicked");
   $("[data-role=panel]").panel("close");
 });
 
@@ -36,7 +33,7 @@ function loadNewsPageDiv() {
 
 //--- Hanchiang News ---
 function getNews() {
-  var url = "http://hju.freetzi.com/php/getnews.php";
+  var url = "http://hjuapp.site/php/getnews.php";
 
   var output = "";
 
@@ -56,30 +53,4 @@ function getNews() {
       .listview()
       .listview("refresh");
   });
-
-  // $.ajax({
-  //   type: 'GET',
-  //   url: url,
-  //   crossDomain: true,
-  //   cache: false,
-  //   success: function(result) {
-  //     // var obj = $.parseJSON(result[0]);
-  //     console.log(result);
-  //     $.each(result, function(i, field) {
-  //       console.log(i + ':' + field.title);
-  //     });
-  //   }
-  // });
-
-  // $.ajax(url)
-  //   .done(function(data) {
-  //     console.log(data);
-  //     alert(data);
-  //     //var obj = JSON.parse(data);
-  //     //console.log(obj);
-  //     //$('.contents').html(data);
-  //   })
-  //   .fail(function() {
-  //     $('.contents').html(name + ' not found!');
-  //   });
 }
